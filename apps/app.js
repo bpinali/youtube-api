@@ -5,7 +5,7 @@ $(document).ready(function () {
                 "key": "AIzaSyCYZlEH12h5JNUUnKo9S017sIeAMvV4ayg",
                 "q": query,
                 "type": "video",
-                "maxResults": "21"
+                "maxResults": "24"
             },
             function (data) {
                 if (data.pageInfo.totalResults == 0) {

@@ -1,0 +1,118 @@
+/* CSS Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
+    box-sizing: border-box;
+    /*reset Chrome user agent styles*/
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
+}
+
+
+/* General Styles */
+
+body {
+    background-color: #333;
+    text-align: center;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+}
+
+
+/* Header Styles */
+
+header {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 90px;
+    line-height: 90px;
+    white-space: nowrap;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 300;
+    font-size: 2.75rem;
+}
+
+.logo-text img {
+    vertical-align: middle;
+    width: 9.375rem;
+}
+
+#search-box {
+    width: 40%;
+    padding: 1rem;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #000;
+    -webkit-box-shadow: 0px 2px 2px 2px rgba(41, 41, 41, 1);
+    -moz-box-shadow: 0px 2px 2px 2px rgba(41, 41, 41, 1);
+    box-shadow: 0px 2px 2px 2px rgba(41, 41, 41, 1);
+}
+
+input[type="text"] {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+#search-button {
+    padding: .75rem;
+    margin-left: 1.25rem;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #666;
+    font-size: 1.25rem;
+    -webkit-box-shadow: 0px 2px 2px 2px rgba(41, 41, 41, 1);
+    -moz-box-shadow: 0px 2px 2px 2px rgba(41, 41, 41, 1);
+    box-shadow: 0px 2px 2px 2px rgba(41, 41, 41, 1);
+}
+
+
+/* Body Styles */
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+#results {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-top: 3rem;
+}
+
+#results li {
+    width: 31%;
+    margin-right: 1.5%;
+    display: inline-block;
+    margin-bottom: 1.25rem;
+}
+
+#results li img {
+    width: 100%;
+}
+
+#results h3 {
+    font-weight: 300;
+}

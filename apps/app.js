@@ -4,7 +4,8 @@ $(document).ready(function () {
                 "part": "snippet",
                 "key": "AIzaSyCYZlEH12h5JNUUnKo9S017sIeAMvV4ayg",
                 "q": query,
-                "type": "video"
+                "type": "video",
+                "maxResults": "21"
             },
             function (data) {
                 if (data.pageInfo.totalResults == 0) {

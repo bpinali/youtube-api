@@ -145,6 +145,7 @@ ol {
     }
     #results li {
         width: 50%;
+        padding: 0.7rem;
     }
 }
 

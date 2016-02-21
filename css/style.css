@@ -126,3 +126,42 @@ ol {
     padding-top: 0.5rem;
     letter-spacing: 0.06rem;
 }
+
+
+/* Responsive Styles */
+
+@media only screen and (max-width: 768px) {
+    header {
+        width: 75%;
+    }
+    #search-box {
+        width: 70%;
+    }
+    #search-button {
+        margin-left: 1rem;
+    }
+    #results {
+        width: 90%;
+    }
+    #results li {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    header {
+        width: 75%;
+    }
+    #search-box {
+        width: 70%;
+    }
+    #search-button {
+        margin-left: 0.5rem;
+    }
+    #results {
+        width: 90%;
+    }
+    #results li {
+        width: 100%;
+    }
+}

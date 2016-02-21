@@ -161,6 +161,10 @@ ol {
     #results {
         width: 90%;
     }
+    #input {
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+    }
     #results li {
         width: 100%;
     }

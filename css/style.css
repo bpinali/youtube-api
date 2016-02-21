@@ -35,6 +35,9 @@ body {
     -webkit-box-shadow: 0px 3px 2px 3px rgba(41, 41, 41, 0.8);
     -moz-box-shadow: 0px 3px 2px 3px rgba(41, 41, 41, 0.8);
     box-shadow: 0px 3px 2px 3px rgba(41, 41, 41, 0.8);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 }
 
 
@@ -66,9 +69,6 @@ header h1 {
 #search-box {
     width: 40%;
     padding: 1rem;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
     color: #000;
 }
 
@@ -86,11 +86,8 @@ button:focus {
 }
 
 #search-button {
-    padding: .75rem;
+    padding: 0.75rem 1.25rem 0.75rem 1.25rem;
     margin-left: 1.25rem;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
     color: #fff;
     background-color: #666;
     font-size: 1.25rem;
@@ -126,5 +123,6 @@ ol {
 
 #results h3 {
     font-weight: 300;
-    padding-top: .5rem;
+    padding-top: 0.5rem;
+    letter-spacing: 0.06rem;
 }

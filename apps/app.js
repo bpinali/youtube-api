@@ -1,38 +1,56 @@
-$(document).ready(function () {
-    function getResults(query) {
-        $.getJSON("https://www.googleapis.com/youtube/v3/search", {
-                "part": "snippet",
-                "key": "AIzaSyCYZlEH12h5JNUUnKo9S017sIeAMvV4ayg",
-                "q": query,
-                "type": "video",
-                "maxResults": "24"
-            },
-            function (data) {
-                if (data.pageInfo.totalResults == 0) {
-                    alert("No videos found!");
-                }
-                // If there are no results it will just empty the list
-                displaySearchResults(data.items);
-                //console.log(data.items[0].snippet.description);
-                //console.log(data.items[0].snippet.thumbnails.high.url);
-                console.log(data.items);
-            }
-
-        );
-    }
-
-    function displaySearchResults(videoList) {
-        var html = '';
-        $.each(videoList, function (index, video) {
-            html = html + '<li><a href="https://www.youtube.com/watch?v=' + video.id.videoId + '"><img src="' + video.snippet.thumbnails.high.url + '" alt=""></a><div class="caption"><h3>' + video.snippet.title + '</h3></div></li>';
-        });
-        $("#results ul").html(html);
-    }
-    //  $('.add-item').on('click', function () {
-    $('#search-button').on('click', function () {
-        getResults($("#search-box").val());
-    });
-
-    // getResults("chemistry");
-
+$('#search-button').on('click', getUserQuery);
+$(document).on('keypress', function(key) {
+  if (key.keyCode == 13) {
+    getUserQuery();
+  }
 });
+
+function getUserQuery() {
+  $("#results ul").empty();
+  getResults($("#search-box").val());
+}
+
+function getResults(query) {
+  $.getJSON("https://www.googleapis.com/youtube/v3/search", {
+      "part": "snippet",
+      "key": "AIzaSyCYZlEH12h5JNUUnKo9S017sIeAMvV4ayg",
+      "q": query,
+      "type": "video",
+      "maxResults": "24"
+    },
+    alertOrReduce
+  );
+}
+
+function alertOrReduce(data) {
+  var output = '';
+  if (data.pageInfo.totalResults == 0) {
+    alert("No videos found!");
+  } else {
+    data.items.forEach(parseVideoDetails)
+  }
+}
+
+function parseVideoDetails(video) {
+  var urlFragment = video.id.videoId;
+  var fullVideoURL = 'https://www.youtube.com/watch?v=' + urlFragment;
+  var videoTitle = video.snippet.title;
+  var videoThumbURL = video.snippet.thumbnails.high.url;
+  new SingleVideo(fullVideoURL, videoThumbURL, videoTitle);
+}
+
+var SingleVideo = function(url, imageurl, title) {
+  this.url = url;
+  this.imageurl = imageurl;
+  this.title = title;
+  this.encaseInListItem();
+  this.displayListResult();
+}
+
+SingleVideo.prototype.encaseInListItem = function() {
+  this.fullHTML = '<li><a href="' + this.url + '" target="_blank"><img src="' + this.imageurl + '" alt=""></a><div class="caption"><h3>' + this.title + '</h3></div></li>';
+}
+
+SingleVideo.prototype.displayListResult = function() {
+  $("#results ul").append(this.fullHTML);
+}
